@@ -87,14 +87,14 @@ class Chicken{
      * Tests if the input's bounding box
      * intersects with the chicken's bounding box
      * 
-     * @param {Fox} fox object to test
+     * @param {Egg} egg object to test
      */
-    hits(fox){
-        //compute distance between center of chicken and fox.
-        let distance=dist(this.x,this.y,fox.x,fox.y);
+    hits(egg){
+        //compute distance between center of chicken and egg.
+        let distance=dist(this.x,this.y,egg.x,egg.y);
 
         //if the distance is less than the sum of the radii, there is a collision
-        if(distance<(this.d+fox.d)*0.5){
+        if(distance<(this.d+egg.d)*0.5){
             return true;
         } else {
             return false;
