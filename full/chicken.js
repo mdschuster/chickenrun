@@ -12,20 +12,24 @@
  * 
  * PROPERTIES:
  * this.d       the diameter of the circle bounding box
+ * this.size    dimension of the chicken sprite
  * this.x       x position of the center of the bounding box
  * this.y       y position of the center of the bounding box
  * this.vy      velocity in the y direction
  * this.gravity constant value for gravity
+ * this.counter variable to help with animation of chicken sprite
  */
 
 
 class Chicken{
     constructor(){
         this.d = 100;                   //diameter of bounding box circle
+        this.size=this.d+10             //size of image
         this.x = 50 + this.d/2;         //x position, 50 pix+the radius from the edge
         this.y = height - this.d/2;     //y position, bottom (height)-the radius
         this.vy = 0;                    //y velocity
         this.gravity = 3;               //gravity acceleration
+        this.counter=0;
     }
 
     /**
@@ -58,14 +62,24 @@ class Chicken{
 
     /**
      * displays the chicken
-     * FIXME: use an actual image rather than the bounding box
+     * Alternates sprites every 10 frames
+     * The x and y position are designated from the corner of the sprite
      */
     show() {
-        //image(uImg, this.x, this.y, this.r, this.r);
         
-        fill(255, 50);
-        ellipseMode(CENTER);
-        ellipse(this.x, this.y, this.d, this.d);  
+        
+        //fill(255, 50);
+        //ellipseMode(CENTER);
+        //ellipse(this.x, this.y, this.d, this.d);
+        if(this.counter<=10){
+            image(Cimage1, this.x-this.size/2, this.y-this.size/2, this.size, this.size);
+        } else {
+            image(Cimage2, this.x-this.size/2, this.y-this.size/2, this.size, this.size);
+        }
+        this.counter++
+        if(this.counter==20){
+            this.counter=0;
+        }
     }
 
     

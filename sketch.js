@@ -28,9 +28,9 @@ function setup() {
 /**
  * Draw function is called on every screen refresh
  * Four main actions will take place
- * 1) Spawn foxes
+ * 1) Spawn eggs
  * 2) update chicken position
- * 3) update fox position
+ * 3) update egg position
  * 4) check for bounding box collisions
  */
 function draw(){

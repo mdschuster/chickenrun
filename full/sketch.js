@@ -11,21 +11,30 @@
  * 
  * 
  * PROPERTIES:
- * foxes[]              Array that holds foxes
- * timeBetweenSpawns    minimum time between fox spawns
+ * eggs[]              Array that holds eggs
+ * timeBetweenSpawns    minimum time between egg spawns
  * currentTime          timer used to determine next spawn
+ * Cimage1              frame 1 of the chicken sprite
+ * Cimage2              frame 2 of the chicken sprite
+ * Eimage               egg image
  */
 
 
-let foxes=[]; //fox array, we can have many on the scren at the same time
+let eggs=[]; //egg array, we can have many on the scren at the same time
 let timeBetweenSpawns=0.7;
 let currentTime=0;
+let Cimage1;
+let Cimage2;
+let Eimage;
 
 /**
  * Preloads images before the program starts
  */
 function preload(){
-    //for preloading the images in the future
+    //for preloading the images
+    Cimage1=loadImage('graphics/chicken1.png')
+    Cimage2=loadImage('graphics/chicken2.png')
+
 }
 
 /**
@@ -39,24 +48,24 @@ function setup() {
 
 /**
  * Three spawn methods that spawn differnt
- * numbers of foxes.
- * When more than one fox is spawned
+ * numbers of eggss.
+ * When more than one egg is spawned
  * there is a small gap between them
  */
-function spawnFox(){
-    foxes.push(new Fox());
+function spawnEgg(){
+    eggs.push(new Egg());
 }
 function doubleSpawn(){
-    foxes.push(new Fox());
-    foxes.push(new Fox());
-    foxes[foxes.length-1].x+=60;
+    eggs.push(new Egg());
+    eggs.push(new Egg());
+    eggs[eggs.length-1].x+=60;
 }
 function tripleSpawn(){
-    foxes.push(new Fox());
-    foxes.push(new Fox());
-    foxes[foxes.length-1].x+=60;
-    foxes.push(new Fox());
-    foxes[foxes.length-1].x+=60*2;
+    eggs.push(new Egg());
+    eggs.push(new Egg());
+    eggs[eggs.length-1].x+=60;
+    eggs.push(new Egg());
+    eggs[eggs.length-1].x+=60*2;
 
 }
 
@@ -75,13 +84,13 @@ function keyPressed() {
 /**
  * Draw function is called on every screen refresh
  * Four main action take place
- * 1) Spawn foxes
+ * 1) Spawn eggs
  * 2) update chicken position
- * 3) update fox position
+ * 3) update egg position
  * 4) check for bounding box collisions
  * 
  * This includes a performance improvement too,
- * when a fox leaves the screen area, it is popped
+ * when a egg leaves the screen area, it is popped
  * from the array and cleaned up by the 
  * garbage collector
  */
@@ -89,7 +98,7 @@ function draw(){
     //draw white background every time
     background(255);
 
-    //randomly spawn foxes after a set time (timeBetweenSpawns)
+    //randomly spawn egg after a set time (timeBetweenSpawns)
     if(currentTime<=0){
 
         if(random(1)<0.1){
@@ -99,7 +108,7 @@ function draw(){
             }else if(val<0.5){
                 tripleSpawn();
             } else{
-                spawnFox();
+                spawnEgg();
             }
             currentTime=timeBetweenSpawns;
         }
@@ -114,25 +123,24 @@ function draw(){
 
     let count=0;
     let hit=false;
-    //update every fox in the foxes array
-    for (let i = 0; i < foxes.length; i++) {
-        foxes[i].move();
-        foxes[i].show();
-        if(c.hits(foxes[i])){
+    //update every egg in the eggs array
+    for (let i = 0; i < eggs.length; i++) {
+        eggs[i].move();
+        eggs[i].show();
+        if(c.hits(eggs[i])){
             hit=true;
-            break;
         }
 
         /**performace issue fix */
-        if(foxes[i].x<-16){
+        if(eggs[i].x<-16){
             count++;
         }
 
     }
     /**performance issue fix */
-    //remove count number of foxes
+    //remove count number of eggs
     for (let i = 0; i < count; i++) {
-        foxes.shift();
+        eggs.shift();
     }
     //when hit is true, print game over to the console
     //and stop the game loop.

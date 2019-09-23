@@ -1,10 +1,10 @@
 /**
- * Fox class for dino run clone
+ * Egg class for dino run clone
  * Copyright (C) 2019 by Micah Schuster
  * 
  * This code is licensed under the GPL
  * 
- * The Fox class stores the data and
+ * The Egg class stores the data and
  * draws the graphics for the obsticals
  * in our dino run clone
  * 
@@ -14,7 +14,7 @@
  * this.y   y position of the center of the bounding box
  */
 
-class Fox{
+class Egg{
     //sets the initial values
     constructor(){
         this.d=50;                  //diameter of the circle
@@ -23,7 +23,7 @@ class Fox{
     }
 
     /**
-     * moves the "fox" by 16 pixels per time step
+     * moves the "egg" by 16 pixels per time step
      * in the x direction only
      */
     move(){
@@ -31,7 +31,7 @@ class Fox{
     }
 
     /**
-     * displays the fox
+     * displays the egg
      * FIXME: use an actual image rather than the bounding box
      */
     show(){
