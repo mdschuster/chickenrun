@@ -99,6 +99,10 @@ function draw(){
     //draw white background every time
     background(255);
 
+    //draw line for ground
+    strokeWeight(2);
+    line(0,height,width,height);
+
     //randomly spawn egg after a set time (timeBetweenSpawns)
     if(currentTime<=0){
 

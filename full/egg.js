@@ -20,7 +20,7 @@ class Egg{
         this.d=40;                  //diameter of the circle
         this.size=60;         //size of sprite
         this.x=width+this.size;        //starting x position (location width)
-        this.y=height-this.size/2;     //y position, height-the radius (down is positive y)
+        this.y=height-this.d/2-5;     //y position, height-the radius (down is positive y)
     }
 
     /**
