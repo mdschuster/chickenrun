@@ -17,8 +17,8 @@
 class Egg{
     //sets the initial values
     constructor(){
-        this.d=50;                  //diameter of the circle
-        this.size=this.d+10         //size of sprite
+        this.d=40;                  //diameter of the circle
+        this.size=60;         //size of sprite
         this.x=width+this.d;        //starting x position (location width)
         this.y=height-this.d/2;     //y position, height-the radius (down is positive y)
     }
@@ -36,7 +36,7 @@ class Egg{
      * FIXME: use an actual image rather than the bounding box
      */
     show(){
-        //display the "Fox" as a circle for now
+        //display the "egg" as a circle for now
         fill(255,50);
         ellipseMode(CENTER);
         ellipse(this.x, this.y,this.d,this.d);
