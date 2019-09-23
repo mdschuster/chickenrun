@@ -18,6 +18,7 @@ class Egg{
     //sets the initial values
     constructor(){
         this.d=50;                  //diameter of the circle
+        this.size=this.d+10         //size of sprite
         this.x=width+this.d;        //starting x position (location width)
         this.y=height-this.d/2;     //y position, height-the radius (down is positive y)
     }
@@ -39,5 +40,6 @@ class Egg{
         fill(255,50);
         ellipseMode(CENTER);
         ellipse(this.x, this.y,this.d,this.d);
+        image(Eimage, this.x-this.size/2, this.y-this.size/2, this.size, this.size);
     }
 }

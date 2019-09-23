@@ -34,6 +34,7 @@ function preload(){
     //for preloading the images
     Cimage1=loadImage('graphics/chicken1.png')
     Cimage2=loadImage('graphics/chicken2.png')
+    Eimage=loadImage('graphics/egg.png')
 
 }
 
