@@ -9,9 +9,10 @@
  * in our dino run clone
  * 
  * PROPERTIES:
- * this.d   the diameter of the circle bounding box
- * this.x   x position of the center of the bounding box
- * this.y   y position of the center of the bounding box
+ * this.d       the diameter of the circle bounding box
+ * this.size    The size of the sprite, should be a little bigger than the bounding box
+ * this.x       x position of the center of the bounding box
+ * this.y       y position of the center of the bounding box
  */
 
 class Egg{
@@ -35,10 +36,12 @@ class Egg{
      * displays the egg
      */
     show(){
-        //display the "egg" as a circle for now
-        fill(255,50);
-        ellipseMode(CENTER);
-        ellipse(this.x, this.y,this.d,this.d);
+        //display the bounding box of the egg
+        //fill(255,50);
+        //ellipseMode(CENTER);
+        //ellipse(this.x, this.y,this.d,this.d);
+
+        //display the image of the egg
         image(Eimage, this.x-this.size/2, this.y-this.size/2, this.size, this.size);
     }
 }
