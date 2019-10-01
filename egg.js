@@ -1,5 +1,5 @@
 /**
- * Fox class for dino run clone
+ * Egg class for dino run clone
  * Copyright (C) 2019 by Micah Schuster
  * 
  * This code is licensed under the GPL
