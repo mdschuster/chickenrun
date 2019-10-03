@@ -137,7 +137,7 @@ function draw(){
         }
 
         /**performace issue fix */
-        if(eggs[i].x<-16){
+        if(eggs[i].x < -16){
             count++;
         }
 
