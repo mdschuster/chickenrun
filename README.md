@@ -1,6 +1,6 @@
 # ChickenRun -- A Chrome Dinosaur Game Clone
 
-ChickenRun is a clone of the Chrome Dinosaur Game intended as a beginner JavaScript game development workshop. The only required external library is `p5.js` ([link](p5js.org)) and the included presentation contains a step-by-step guide to complete the project.
+ChickenRun is a clone of the Chrome Dinosaur Game intended as a beginner JavaScript game development workshop. The only required external library is `p5.js` ([link](https://p5js.org)) and the included presentation contains a step-by-step guide to complete the project.
 
 ## Getting Started  
 The first few slides of the presentation describe the tools and requirements needed to create the game. A brief list here:  
