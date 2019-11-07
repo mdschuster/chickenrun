@@ -67,10 +67,14 @@ class Chicken{
      */
     show() {
         
-        
-        //fill(255, 50);
-        //ellipseMode(CENTER);
-        //ellipse(this.x, this.y, this.d, this.d);
+        //elipse display
+        /*
+        fill(255, 50);
+        ellipseMode(CENTER);
+        ellipse(this.x, this.y, this.d, this.d);
+        */
+
+        //sprite display
         if(this.counter<=10){
             image(Cimage1, this.x-this.size/2, this.y-this.size/2, this.size, this.size);
         } else {

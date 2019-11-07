@@ -19,7 +19,6 @@
  * Eimage               egg image
  */
 
-
 let eggs=[]; //egg array, we can have many on the scren at the same time
 let timeBetweenSpawns=0.7;
 let currentTime=0;
@@ -43,13 +42,18 @@ function preload(){
  */
 function setup() {
     createCanvas(1024, 450);
-    //create new player object
+    //create new player object (global variable)
     c = new Chicken();
 }
 
 /**
  * Three spawn methods that spawn differnt
  * numbers of eggss.
+ * 
+ * These spawn functions and their uses
+ * are not discussed in the workshop
+ * presentation.
+ * 
  * When more than one egg is spawned
  * there is a small gap between them
  */
@@ -78,8 +82,9 @@ function tripleSpawn(){
 function keyPressed() {
     //space to jump
     if (key == ' ') {
-      c.jump();
+        c.jump();
     }
+    return false;
 }
 
 /**
@@ -91,7 +96,7 @@ function keyPressed() {
  * 4) check for bounding box collisions
  * 
  * This includes a performance improvement too,
- * when a egg leaves the screen area, it is popped
+ * when a egg leaves the screen area, it is shifted
  * from the array and cleaned up by the 
  * garbage collector
  */
@@ -142,7 +147,7 @@ function draw(){
         }
 
     }
-    /**performance issue fix */
+    /*performance issue fix */
     //remove count number of eggs
     for (let i = 0; i < count; i++) {
         eggs.shift();

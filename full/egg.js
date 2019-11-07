@@ -19,9 +19,9 @@ class Egg{
     //sets the initial values
     constructor(){
         this.d=40;                  //diameter of the circle
-        this.size=60;         //size of sprite
-        this.x=width+this.size;        //starting x position (location width)
-        this.y=height-this.d/2-5;     //y position, height-the radius (down is positive y)
+        this.size=60;               //size of sprite
+        this.x=width+this.size;     //starting x position (location width)
+        this.y=height-this.d/2-5;   //y position, height-the radius (down is positive y)
     }
 
     /**
@@ -29,7 +29,7 @@ class Egg{
      * in the x direction only
      */
     move(){
-        this.x-=16; //move 16 pixels per tick (might be too fast)
+        this.x-=16; //move 16 pixels per tick (adjust as needed)
     }
 
     /**
@@ -37,9 +37,11 @@ class Egg{
      */
     show(){
         //display the bounding box of the egg
-        //fill(255,50);
-        //ellipseMode(CENTER);
-        //ellipse(this.x, this.y,this.d,this.d);
+        /*
+        fill(255,50);
+        ellipseMode(CENTER);
+        ellipse(this.x, this.y,this.d,this.d);
+        */
 
         //display the image of the egg
         image(Eimage, this.x-this.size/2, this.y-this.size/2, this.size, this.size);
