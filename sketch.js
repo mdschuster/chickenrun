@@ -32,6 +32,7 @@ function preload(){
  * Creates the canvas and the player character
  */
 function setup() {
+    createCanvas(1024, 450);
 
 }
 
